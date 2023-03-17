@@ -1,0 +1,58 @@
+{
+    "name": "myprovider",
+    "displayName": "",
+    "description": "",
+    "homepage": "https://pulumi.com",
+    "repository": "https://github.com/pulumi/pulumi-pulumiservice",
+    "keywords": ["pulumi", "kind/native", "category/infrastructure"],
+    "license": "Apache-2.0",
+    "publisher": "Pulumi",
+    "provider": {
+      "type": "object",
+      "inputProperties": {}
+    },
+    "resources": {
+      "myprovider:index:MyResource": {
+        "description": "Access tokens allow a user to authenticate against the Pulumi Service",
+        "properties": {
+          "description": {
+            "description": "Description of the access token.",
+            "type": "string"
+          }
+        },
+        "inputProperties": {
+          "description": {
+            "description": "Description of the access token.",
+            "type": "string"
+          }
+        },
+        "requiredInputs": ["description"]
+      }
+    },
+    "language": {
+      "csharp": {
+        "namespaces": {
+          "pulumiservice": "PulumiService"
+        },
+        "packageReferences": {
+          "Pulumi": "3.*"
+        }
+      },
+      "go": {
+        "generateResourceContainerTypes": true,
+        "importBasePath": "github.com/pulumi/pulumi-pulumiservice/sdk/go/pulumiservice"
+      },
+      "nodejs": {
+        "packageName": "@pulumi/myprovider",
+        "dependencies": {
+          "@pulumi/pulumi": "^3.0.0"
+        }
+      },
+      "python": {
+        "packageName": "pulumi_pulumiservice",
+        "requires": {
+          "pulumi": ">=3.0.0,<4.0.0"
+        }
+      }
+    }
+  }
