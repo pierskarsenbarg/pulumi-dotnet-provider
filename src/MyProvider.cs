@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using Pulumi.Experimental.Provider;
 
 public class MyProvider : Provider
@@ -48,6 +44,11 @@ public class MyProvider : Provider
         if (request.Type == "myprovider:index:MyResource")
         {
             var description = request.Properties["description"];
+
+
+            
+
+
             var outputs = new Dictionary<string, PropertyValue>();
             outputs.Add("description", description);
             return Task.FromResult(new CreateResponse
